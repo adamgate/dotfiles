@@ -6,3 +6,11 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	ba = !git branch -a
+	fp = !git fetch -p
+	prb = !git pull --rebase

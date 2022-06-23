@@ -13,11 +13,11 @@ echo ""
 
 # Initialize Directories
 echo "Initializing directories in ${drive}: ..."
-New-Item -ItemType Directory -Force -Path ${Drive}:\Code\Personal
-New-Item -ItemType Directory -Force -Path ${Drive}:\Code\Sandbox
-New-Item -ItemType Directory -Force -Path ${Drive}:\Code\Work
-New-Item -ItemType Directory -Force -Path ${Drive}:\Code\Misc
-New-Item -ItemType Directory -Force -Path ${Drive}:\Tools
+New-Item -ItemType Directory -Force -Path ${Drive}:\Code\Personal | Out-Null
+New-Item -ItemType Directory -Force -Path ${Drive}:\Code\Sandbox | Out-Null
+New-Item -ItemType Directory -Force -Path ${Drive}:\Code\Work | Out-Null
+New-Item -ItemType Directory -Force -Path ${Drive}:\Code\Misc | Out-Null
+New-Item -ItemType Directory -Force -Path ${Drive}:\Tools | Out-Null
 echo "Directories intialized."
 echo ""
 
@@ -37,7 +37,9 @@ echo "Config files installed."
 echo ""
 
 echo "***TODO:***"
-echo "Unpin folders you don't want on file explorer quick access"
-echo "Enable 'View Hidden Files' in file explorer"
-echo "Enable 'View file extensions' in file explorer"
-echo ""
+echo "File Explorer:"
+echo "  *Unpin folders you don't want on quick access"
+echo "  *Enable 'View Hidden Files'"
+echo "  *Enable 'View file extensions'"
+echo "Install Programs:"
+echo "  *Neovim"

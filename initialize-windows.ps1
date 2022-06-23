@@ -35,6 +35,7 @@ echo ""
 # Config Files
 echo "Installing config files..."
 Copy-Item .\init.vim -Destination ~\.config\nvim
+Copy-Item .\.gitconfig -Destination ~
 echo "Config files installed."
 echo ""
 

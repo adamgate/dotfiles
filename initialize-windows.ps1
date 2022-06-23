@@ -18,6 +18,8 @@ New-Item -ItemType Directory -Force -Path ${Drive}:\Code\Sandbox | Out-Null
 New-Item -ItemType Directory -Force -Path ${Drive}:\Code\Work | Out-Null
 New-Item -ItemType Directory -Force -Path ${Drive}:\Code\Misc | Out-Null
 New-Item -ItemType Directory -Force -Path ${Drive}:\Tools | Out-Null
+
+New-Item -ItemType Directory -Force -Path ~\.config\nvim | Out-Null
 echo "Directories intialized."
 echo ""
 
@@ -32,7 +34,7 @@ echo ""
 
 # Config Files
 echo "Installing config files..."
-# 
+Copy-Item .\init.vim -Destination ~\.config\nvim
 echo "Config files installed."
 echo ""
 

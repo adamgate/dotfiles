@@ -12,9 +12,19 @@ enum custom_keycodes {
   RAISE,
 };
 
-///////////////////
-// TAPDANCES
-///////////////////
+/*****************/
+/***   IDEAS   ***/
+/*****************/
+/*
+ * -have a combo that allows you to switch the base layer between base & gaming layers
+ * -add another symbol layer where the arrow keys are combined with ctrl
+ * -add another symbol layer where the arrow keys are combined with ctrl + shift
+ * -add combos that allow me to switch to ANY layer from the base layer and back quickly
+ */
+
+/*****************/
+/*** TAPDANCES ***/
+/*****************/
 enum custom_tapdances {
    TD_SHFT_CAPS = 0,
 };
@@ -23,9 +33,9 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_SHFT_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS), //shift if pressed 1x, caps lock if pressed 2x
 };
 
-//////////////////
-// COMBOS
-///////////////////
+/*****************/
+/***  COMBOS   ***/
+/*****************/
 // const uint16_t PROGMEM raiseToLayer2[] = {_______, _______, COMBO_END};
 // const uint16_t PROGMEM raiseToLayer3[] = {_______, _______, COMBO_END};
 // const uint16_t PROGMEM raiseToLayer4[] = {_______, _______, COMBO_END};
@@ -39,9 +49,9 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 //     COMBO(raiseToLayer2, LCTL(KC_Z)),
 // };
 
-//////////////////
-// KEYMAPS
-///////////////////
+/*****************/
+/***  KEYMAPS  ***/
+/*****************/
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    // layout for everyday use
@@ -53,8 +63,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         KC_RALT, KC_LGUI, KC_BSPC,         KC_SPC, TT(_LOWER), _______
   ),
 
-  //layer for programming symbols that didn't fit on the first layer
-  //will probably add macros for different ide's here later
   [_LOWER] = LAYOUT(
      KC_GRAVE, KC_F1,  KC_F2,  KC_F3,  KC_F4,   KC_F5,                               KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_PEQL,
      KC_F11,  KC_F12,  KC_UP,  _______, _______, KC_LPRN,                            KC_RPRN,  KC_7,    KC_8,    KC_9,   KC_PSLS, KC_PAST,

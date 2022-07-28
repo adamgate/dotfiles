@@ -1,5 +1,6 @@
 SPLIT_KEYBOARD = yes
 TAP_DANCE_ENABLE = yes
+# COMBO_ENABLE = yes
 # RGBLIGHT_ENABLE = yes
 
 # Disable unnecessary things to save space

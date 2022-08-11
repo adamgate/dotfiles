@@ -1,5 +1,5 @@
 [user]
-	name = adamapplegate
+	name = adamgate
 	email = applegateadaml@gmail.com
 [filter "lfs"]
 	clean = git-lfs clean -- %f

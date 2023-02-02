@@ -27,18 +27,18 @@ enum custom_keycodes {
 /*****************/
 enum custom_tapdances {
    TD_SHFT_CAPS = 0,
-   [TD_1_F1]  = 1,
-   [TD_2_F2]  = 2,
-   [TD_3_F3]  = 3,
-   [TD_4_F4]  = 4,
-   [TD_5_F5]  = 5,
-   [TD_6_F6]  = 6,
-   [TD_7_F7]  = 7,
-   [TD_8_F8]  = 8,
-   [TD_9_F9]  = 9,
-   [TD_0_F10] = 10,
-  //  [TD_TAB_F11] = 11,
-  //  [TD_Q_F12] = 12,
+   TD_1_F1  = 1,
+   TD_2_F2  = 2,
+   TD_3_F3  = 3,
+   TD_4_F4  = 4,
+   TD_5_F5  = 5,
+   TD_6_F6  = 6,
+   TD_7_F7  = 7,
+   TD_8_F8  = 8,
+   TD_9_F9  = 9,
+   TD_0_F10 = 10,
+  //  TD_TAB_F11 = 11,
+  //  TD_Q_F12 = 12,
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {

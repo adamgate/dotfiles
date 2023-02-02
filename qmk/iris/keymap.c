@@ -27,10 +27,30 @@ enum custom_keycodes {
 /*****************/
 enum custom_tapdances {
    TD_SHFT_CAPS = 0,
+   [TD_1_F1]  = 1,
+   [TD_2_F2]  = 2,
+   [TD_3_F3]  = 3,
+   [TD_4_F4]  = 4,
+   [TD_5_F5]  = 5,
+   [TD_6_F6]  = 6,
+   [TD_7_F7]  = 7,
+   [TD_8_F8]  = 8,
+   [TD_9_F9]  = 9,
+   [TD_0_F10] = 10,
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_SHFT_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS), //shift if pressed 1x, caps lock if pressed 2x
+  [TD_1_F1] = ACTION_TAP_DANCE_DOUBLE(KC_1, KC_F1),
+  [TD_2_F2] = ACTION_TAP_DANCE_DOUBLE(KC_2, KC_F2),
+  [TD_3_F3] = ACTION_TAP_DANCE_DOUBLE(KC_3, KC_F3),
+  [TD_4_F4] = ACTION_TAP_DANCE_DOUBLE(KC_4, KC_F4),
+  [TD_5_F5] = ACTION_TAP_DANCE_DOUBLE(KC_5, KC_F5),
+  [TD_6_F6] = ACTION_TAP_DANCE_DOUBLE(KC_6, KC_F6),
+  [TD_7_F7] = ACTION_TAP_DANCE_DOUBLE(KC_7, KC_F7),
+  [TD_8_F8] = ACTION_TAP_DANCE_DOUBLE(KC_8, KC_F8),
+  [TD_9_F9] = ACTION_TAP_DANCE_DOUBLE(KC_9, KC_F9),
+  [TD_0_F10] = ACTION_TAP_DANCE_DOUBLE(KC_0, KC_F10),
 };
 
 /*****************/
@@ -60,15 +80,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_EQL,
      TD(TD_SHFT_CAPS), KC_A,    KC_S,    KC_D,    KC_F,  KC_G,                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
      KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  KC_DEL,              KC_ENT, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_BSLS,
-                                        KC_RALT, KC_LGUI, KC_BSPC,         KC_SPC, TT(_LOWER), _______
+                                        KC_LALT, KC_LGUI, KC_BSPC,          KC_SPC, TT(_LOWER), XXXXXXX
   ),
 
   [_LOWER] = LAYOUT(
      KC_GRAVE, KC_F1,  KC_F2,  KC_F3,  KC_F4,   KC_F5,                               KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_PEQL,
-     KC_F11,  KC_F12,  KC_UP,  _______, _______, KC_LPRN,                            KC_RPRN,  KC_7,    KC_8,    KC_9,   KC_PSLS, KC_PAST,
-     KC_LSFT, KC_LEFT, KC_DOWN, KC_RGHT, _______, KC_LCBR,                           KC_RCBR,  KC_4,    KC_5,    KC_6,   KC_PMNS, KC_PPLS,
-     KC_LCTL, _______, _______, _______, _______, KC_LBRC, KC_DEL,            KC_ENT, KC_RBRC,  KC_1,    KC_2,    KC_3,   KC_PDOT, _______,
-                                       _______, TO(_QWERTY), KC_BSPC,         KC_SPC, TG(_GAMING), KC_0
+     KC_F11,  KC_F12,  KC_UP,  XXXXXXX, XXXXXXX, KC_LPRN,                            KC_RPRN,  KC_7,    KC_8,    KC_9,   KC_PSLS, KC_PAST,
+     KC_LSFT, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, KC_LCBR,                           KC_RCBR,  KC_4,    KC_5,    KC_6,   KC_PMNS, KC_PPLS,
+     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, _______,         _______, KC_RBRC,  KC_1,    KC_2,    KC_3,   KC_0, KC_PDOT,
+                                        _______, _______, _______,          _______, TT(_GAMING), TT(_QWERTY)
   ),
 
   //makes gaming easier, adding a space for jumping closer to the movement keys
@@ -76,17 +96,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
      KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_EQL,
      KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-     KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  KC_DEL,             KC_ENT,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_BSLS,
-                                        KC_RALT, KC_SPC, KC_BSPC,           KC_SPC, TG(_RAISE), TO(_LOWER) 
+     _______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  _______,             _______,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_BSLS,
+                                        _______, KC_SPC, _______,           _______, TT(_RAISE), TT(_LOWER) 
   ),
 
   //used for editing rgb settings, sound, and misc commands
   [_RAISE] = LAYOUT(
-     RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, _______,                            KC_MUTE, KC_VOLU, KC_MNXT, _______, KC_BRIU, KC_CALC,
-    _______, RGB_RMOD, RGB_HUD, RGB_SAD, RGB_VAD, _______,                            KC_MSTP, KC_VOLD, KC_MPRV, _______, KC_BRID, KC_MYCM,
-     DM_REC1, DM_REC2, _______, _______, _______, _______,                            _______, _______, _______, _______, _______, KC_WSCH,
-     DM_PLY1, DM_PLY2, _______, _______, _______, _______, _______,         _______, _______, _______,  _______, _______, _______, _______,
-                                       DM_RSTP, TO(_GAMING), _______,        _______, _______, _______
+     RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX,                            KC_MUTE, KC_VOLU, KC_MNXT, XXXXXXX, XXXXXXX, KC_CALC,
+    XXXXXXX, RGB_RMOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX,                            KC_MSTP, KC_VOLD, KC_MPRV, XXXXXXX, XXXXXXX, XXXXXXX,
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                                         XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX, XXXXXXX, TT(_GAMING)
   )
 };
 

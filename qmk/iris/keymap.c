@@ -37,6 +37,8 @@ enum custom_tapdances {
    [TD_8_F8]  = 8,
    [TD_9_F9]  = 9,
    [TD_0_F10] = 10,
+  //  [TD_TAB_F11] = 11,
+  //  [TD_Q_F12] = 12,
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {
@@ -51,6 +53,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_8_F8] = ACTION_TAP_DANCE_DOUBLE(KC_8, KC_F8),
   [TD_9_F9] = ACTION_TAP_DANCE_DOUBLE(KC_9, KC_F9),
   [TD_0_F10] = ACTION_TAP_DANCE_DOUBLE(KC_0, KC_F10),
+  // [TD_TAB_F11] = ACTION_TAP_DANCE_DOUBLE(KC_TAB, KC_F11),
+  // [TD_Q_F12] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_F12),
 };
 
 /*****************/
@@ -93,11 +97,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   //makes gaming easier, adding a space for jumping closer to the movement keys
   [_GAMING] = LAYOUT(
-     KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
-     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_EQL,
-     KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-     _______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  _______,             _______,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_BSLS,
-                                        _______, KC_SPC, _______,           _______, TT(_RAISE), TT(_LOWER) 
+KC_ESC,  TD(TD_1_F1), TD(TD_2_F2), TD(TD_3_F3), TD(TD_4_F4), TD(TD_5_F5),     TD(TD_6_F6), TD(TD_7_F7), TD(TD_8_F8), TD(TD_9_F9), TD(TD_0_F10), KC_MINS,
+     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,    KC_EQL,
+     KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,   KC_SCLN, KC_QUOT,
+     _______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  _______,            _______, KC_N,    KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_BSLS,
+                                        _______, KC_SPC, _______,            _______, TT(_RAISE), TT(_LOWER) 
   ),
 
   //used for editing rgb settings, sound, and misc commands

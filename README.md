@@ -1,5 +1,5 @@
 # config-files
-My config files for various things on various operating systems. This repository contains:
+This repo is a catch-all for various configs on various operating systems. This repository contains:
 
 - My custom neovim configuration
 - Custom QMK keymaps I programmed for several keyboards

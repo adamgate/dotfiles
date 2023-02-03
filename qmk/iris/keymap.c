@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_F11,  KC_F12,  KC_UP,  XXXXXXX, XXXXXXX, KC_LPRN,                            KC_RPRN,  KC_7,    KC_8,    KC_9,   KC_PSLS, KC_PAST,
      KC_LSFT, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, KC_LCBR,                           KC_RCBR,  KC_4,    KC_5,    KC_6,   KC_PMNS, KC_PPLS,
      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, _______,         _______, KC_RBRC,  KC_1,    KC_2,    KC_3,   KC_0, KC_PDOT,
-                                        _______, _______, _______,          _______, TT(_GAMING), TT(_QWERTY)
+                                         _______, _______, _______,         _______, TO(_GAMING), TO(_QWERTY)
   ),
 
   //makes gaming easier, adding a space for jumping closer to the movement keys
@@ -101,7 +101,7 @@ KC_ESC,  TD(TD_1_F1), TD(TD_2_F2), TD(TD_3_F3), TD(TD_4_F4), TD(TD_5_F5),     TD
      KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,    KC_EQL,
      KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,   KC_SCLN, KC_QUOT,
      _______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  _______,            _______, KC_N,    KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_BSLS,
-                                        _______, KC_SPC, _______,            _______, TT(_RAISE), TT(_LOWER) 
+                                        _______, KC_SPC, _______,            _______, TO(_RAISE), TO(_LOWER) 
   ),
 
   //used for editing rgb settings, sound, and misc commands
@@ -110,7 +110,7 @@ KC_ESC,  TD(TD_1_F1), TD(TD_2_F2), TD(TD_3_F3), TD(TD_4_F4), TD(TD_5_F5),     TD
     XXXXXXX, RGB_RMOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX,                            KC_MSTP, KC_VOLD, KC_MPRV, XXXXXXX, XXXXXXX, XXXXXXX,
      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                                         XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX, XXXXXXX, TT(_GAMING)
+                                         XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX, XXXXXXX, TO(_GAMING)
   )
 };
 

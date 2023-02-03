@@ -20,5 +20,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define USE_I2C
 #define EE_HANDS
 #define TAPPING_TOGGLE 3    //# of button presses needed to permanently toggle a layer
-// #define TAPPING_TERM 150     //# of ms before another input is accepted for tap dancing
-// #define RGBLIGHT_LAYERS 4   //# of layer of rgb (max of 8)ASDASDASDASDFASDF
+// #define HOLD_ON_OTHER_KEY_PRESS;

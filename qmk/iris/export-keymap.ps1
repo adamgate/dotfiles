@@ -5,4 +5,4 @@ Copy-Item * -Destination "..\..\..\qmk_firmware\keyboards\keebio\iris\keymaps\Ad
 # delete the powershell script that was moved over
 # Remove-Item -Path C:\Users\Adam\qmk_firmware\keyboards\keebio\iris\keymaps\AdamApplegate -Include *.ps1
 
-Read-Host -Prompt "Press enter to exit"
+Write-Host "Successfully exported keymap." -ForegroundColor Green

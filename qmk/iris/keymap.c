@@ -17,8 +17,8 @@ enum custom_keycodes {
 /*****************/
 /*
  * -have a combo that allows you to switch the base layer between base & gaming layers
- * -add another symbol layer where the arrow keys are combined with ctrl
- * -add another symbol layer where the arrow keys are combined with ctrl + shift
+ * -add a symbol layer/combo where the arrow keys are combined with ctrl
+ * -add a symbol layer/combo where the arrow keys are combined with ctrl + shift
  * -add combos that allow me to switch to ANY layer from the base layer and back quickly
  */
 

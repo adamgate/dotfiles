@@ -3,5 +3,6 @@ This repo is a catch-all for various configs on various operating systems. This 
 
 - My custom neovim configuration
 - Custom QMK keymaps I programmed for several keyboards
+- Custom ZMK keymap for a wireless Corne keyboard
 - A messy powershell script to set up directories on new windows machines
 - Several custom git aliases

@@ -50,6 +50,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 """""""""""""""""""
 " Neovim Settings
 """""""""""""""""""
+let mapleader = ","
+
+syntax on
+
 :set number
 " :set relativenumber
 :set mouse=a
@@ -63,7 +67,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 :set splitright
 :set splitbelow
 
-syntax on
 
 
 """""""""""""""""""
@@ -93,8 +96,6 @@ inoremap ;; <Esc>
 " Can't get <C-Space> by itself to work, so this works as Ctrl - space - space
 " https://github.com/neovim/neovim/issues/3101
 " http://stackoverflow.com/questions/7722177/how-do-i-map-ctrl-x-ctrl-o-to-ctrl-space-in-terminal-vim#answer-24550772
-"nnoremap <C-Space> :NERDTreeToggle<CR>
-"nmap <C-@> <C-Space>
 nnoremap <silent> <Space> :NERDTreeToggle<CR>
 
 " toggle tagbar

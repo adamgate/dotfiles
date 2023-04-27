@@ -33,6 +33,7 @@ Plug 'https://github.com/tpope/vim-fugitive'                            " For gi
 """ Plugins to try """
 "  Plug 'https://github.com/godlygeek/tabular'                             " Line up text
 "  Plug 'https://github.com/plasticboy/vim-markdown'                       " Markdown support
+" Plug  'https://github.com/alexghergh/nvim-tmux-navigation'               " TMUX support (requires TMUX, other repos available)
 
 
 call plug#end()

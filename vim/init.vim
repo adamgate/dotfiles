@@ -68,7 +68,6 @@ syntax on
 :set splitbelow
 
 
-
 """""""""""""""""""
 " Plugin Settings
 """""""""""""""""""
@@ -85,7 +84,6 @@ let g:airline_theme='base16_gruvbox_dark_hard'
 " http://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping#answer-3776182
 " http://stackoverflow.com/questions/22849386/difference-between-nnoremap-and-inoremap#answer-22849425
 """""""""""""""""""
-map <C-n> :NERDTreeToggle<CR>
 map <C-g> :GitGutterEnable<CR>
 
 " use ;; for escape

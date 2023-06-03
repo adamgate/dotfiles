@@ -8,6 +8,7 @@ call plug#begin()
 """ Visual """
 Plug 'https://github.com/chriskempson/base16-vim'                       " Base16 Color Schemes
 Plug 'https://github.com/morhetz/gruvbox'                               " Gruvbox Color Scheme
+Plug 'https://github.com/neanias/everforest-nvim'
 Plug 'https://github.com/ryanoasis/vim-devicons'                        " Developer Icons
 Plug 'https://github.com/terryma/vim-multiple-cursors'                  " Multiple cursors
 
@@ -31,9 +32,9 @@ Plug 'https://github.com/dmerejkowsky/vim-ale'                          " For li
 Plug 'https://github.com/tpope/vim-fugitive'                            " For git commands
 
 """ Plugins to try """
-"  Plug 'https://github.com/godlygeek/tabular'                             " Line up text
-"  Plug 'https://github.com/plasticboy/vim-markdown'                       " Markdown support
-" Plug  'https://github.com/alexghergh/nvim-tmux-navigation'               " TMUX support (requires TMUX, other repos available)
+" Plug 'https://github.com/godlygeek/tabular'                             " Line up text
+" Plug 'https://github.com/plasticboy/vim-markdown'                       " Markdown support
+" Plug  'https://github.com/alexghergh/nvim-tmux-navigation'              " TMUX support (requires TMUX, other repos available)
 
 
 call plug#end()
@@ -75,8 +76,10 @@ syntax on
 :PlugClean!
 :PlugInstall
 :q
-:colorscheme base16-gruvbox-dark-hard
-let g:airline_theme='base16_gruvbox_dark_hard'
+" :colorscheme base16-gruvbox-dark-hard
+" let g:airline_theme='base16_gruvbox_dark_hard'
+:colorscheme everforest
+let g:airline_theme='everforest'
 
 
 """""""""""""""""""
@@ -118,27 +121,27 @@ nnoremap <silent> <leader>sc :source $MYVIMRC<CR>
 """""""""""""""""""
 
 """ Switch between light and dark mode """
-function! Light()
-    echom "entering light mode"
-    :colorscheme base16-gruvbox-light-hard
-    :AirlineTheme base16-gruvbox-light-hard
-endfunction
+" function! Light()
+"     echom "entering light mode"
+"     :colorscheme base16-gruvbox-light-hard
+"     :AirlineTheme base16-gruvbox-light-hard
+" endfunction
 
-function! Dark()
-    echom "entering dark mode"
-    colorscheme base16-gruvbox-dark-hard
-    :AirlineTheme base16-gruvbox-dark-hard
-endfunction
+" function! Dark()
+"     echom "entering dark mode"
+"     colorscheme base16-gruvbox-dark-hard
+"     :AirlineTheme base16-gruvbox-dark-hard
+" endfunction
 
-function! ToggleLightDark()
-  if &bg ==# "light"
-    call Dark()
-  else
-    call Light()
-  endif
-endfunction
+" function! ToggleLightDark()
+"   if &bg ==# "light"
+"     call Dark()
+"   else
+"     call Light()
+"   endif
+" endfunction
 
-nnoremap <leader>c :call ToggleLightDark()<CR>
+" nnoremap <leader>c :call ToggleLightDark()<CR>
 
 """ Sync NERDTree with current open file """
 

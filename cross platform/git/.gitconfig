@@ -1,6 +1,10 @@
 [user]
 	name = adamgate
 	email = applegateadaml@gmail.com
+
+[web]
+	browser = firefox
+
 [alias]
 	co = checkout
 	br = branch

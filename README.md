@@ -1,8 +1,12 @@
 # dotfiles
-This repo is a catch-all for various configs on various operating systems. This repository contains:
+This repo is a catch-all for configs on various operating systems and hardware. The goal is to make setting up new machines easy.
 
-- My custom neovim configuration
-- Custom keymaps (QMK, ZMK, VIA/VIAL, etc) for several keyboards I use
-- A messy powershell script to set up my preferred directory structure on new machines
-- Several custom git aliases
-- probably more. this is always a work in progress
+### This repository contains:
+- editor configs
+- keymaps (QMK, ZMK, VIA/VIAL, etc) for several keyboards I use
+- Linux & KDE dotfiles
+- Windows configs 
+- browser startpages
+- misc scripts
+
+And probably more. This repo is always a work in progress.

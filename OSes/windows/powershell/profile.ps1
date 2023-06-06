@@ -1,2 +1,2 @@
 # Initialize Oh My Posh
-(@(& '$HOME/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='$HOME\AppData\Local\Programs\oh-my-posh\themes\gruvbox.omp.json' --print) -join "`n") | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/gruvbox-simple.omp.json" | Invoke-Expression

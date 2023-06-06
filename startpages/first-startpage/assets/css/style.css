@@ -135,7 +135,7 @@ h3 {
 #searchBox{
     margin:0 auto;
     width:400px;
-    height: 32px;
+    height: 40px;
     border-radius: var(--rounded);
     background-color: var(--bg-primary);
     transition: box-shadow .5s;
@@ -151,15 +151,15 @@ h3 {
 }
 
 #searchbar{
-    height:32px;
+    height:40px;
     border: none;
     width:95%;
     margin-left: 10px;
-    font-size:16px;
+    font-size:21px;
     outline: none;
     background: none;
 
     font-size: 10pt;
     font-style: italic;
-    color: var(--color-primary);
+    color: #fb4934;
 }

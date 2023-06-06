@@ -6,7 +6,8 @@
     --color-primary: #ebdbb2;
     --padding: 1rem;
     --rounded: 0.45rem;
-    --shadow: 0 1px 3px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .12)
+    --shadow: 0 1px 3px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .12);
+    --text-color: #d79921;
 }
 
 * {
@@ -39,13 +40,15 @@ body {
     max-width: 900px;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-weight: 300;
     margin: 0;
     padding: 0;
 }
 
-h3, h4 {
+h3,
+h4 {
     text-transform: uppercase;
     text-align: left;
     color: var(--color-primary);
@@ -65,6 +68,12 @@ h3 {
 #header {
     text-align: center;
     color: var(--color-primary);
+    border-radius: var(--rounded);
+    background-color: var(--bg-secondary);
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: .5rem;
 }
 
 #apps-container {
@@ -77,6 +86,22 @@ h3 {
 #apps-container a {
     text-decoration: none;
     color: var(--color-primary);
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading-container {
+    padding: 5px;
+    display: inline-flex;
+    margin: .5rem;
+    font-weight: bold;
+    background-color: var(--text-color);
+    color: var(--color-primary);
+    border-radius: var(--rounded);
 }
 
 .apps-item {
@@ -95,11 +120,11 @@ h3 {
     background-color: var(--bg-hover) !important;
 }
 
-.apps-item > .apps-text {
+.apps-item>.apps-text {
     transition: padding-top .5s;
 }
 
-.apps-item:hover > .apps-text {
+.apps-item:hover>.apps-text {
     padding-top: 15px;
 }
 
@@ -132,34 +157,34 @@ h3 {
     text-transform: lowercase;
 }
 
-#searchBox{
-    margin:0 auto;
-    width:400px;
+#searchBox {
+    margin: 0 auto;
+    width: 400px;
     height: 40px;
     border-radius: var(--rounded);
     background-color: var(--bg-primary);
     transition: box-shadow .5s;
 }
 
-#searchBox:hover{
+#searchBox:hover {
     box-shadow: 0px 0px 8px 1px var(--color-primary);
 }
 
-#searchBox:focus-within{
+#searchBox:focus-within {
     box-shadow: 0px 0px 8px 1px var(--color-primary);
-    outline:none;
+    outline: none;
 }
 
-#searchbar{
-    height:40px;
+#searchbar {
+    height: 40px;
     border: none;
-    width:95%;
+    width: 95%;
     margin-left: 10px;
-    font-size:21px;
+    font-size: 21px;
     outline: none;
     background: none;
 
     font-size: 10pt;
     font-style: italic;
-    color: #fb4934;
+    color: var(--color-primary);
 }

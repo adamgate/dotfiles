@@ -49,11 +49,13 @@ choco install powertoys                    -y
 # Install vim-plug
 Invoke-WebRequest -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | `New-Item "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force | Out-Null
 
-choco install firefox   -y
-choco install discord   -y
-choco install spotify   -y
-choco install dropbox   -y
-choco install steam     -y
+choco install firefox       -y
+choco install discord       -y
+choco install betterdiscord -y
+choco install spotify       -y
+choco install spicetify-cli -y
+choco install dropbox       -y
+choco install steam         -y
 
 choco install vlc       -y
 choco install 7zip      -y

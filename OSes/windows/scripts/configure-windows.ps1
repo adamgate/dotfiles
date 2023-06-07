@@ -25,6 +25,7 @@ Write-Host "Initializing directories in ${HOME}: ..." -ForegroundColor "Yellow"
 New-Item -ItemType Directory -Force -Path ${HOME}\Code\Personal | Out-Null
 New-Item -ItemType Directory -Force -Path ${HOME}\Code\Sandbox | Out-Null
 New-Item -ItemType Directory -Force -Path ${HOME}\Tools | Out-Null
+New-Item -ItemType Directory -Force -Path ${HOME}\Tools\Scripts | Out-Null
 
 # Pin Directories to File Explorer QuickAccess
 Write-Output "Pinning to Quick Access..." -ForegroundColor "Yellow"
@@ -42,3 +43,6 @@ Write-Output "Installing config files..." -ForegroundColor "Yellow"
     # font
 # windows terminal themes & settings
 # neovim config
+# browser startpage
+# betterdiscord & spicetify themes
+# .gitconfig

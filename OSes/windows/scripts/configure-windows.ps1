@@ -46,3 +46,4 @@ Write-Output "Installing config files..." -ForegroundColor "Yellow"
 # browser startpage
 # betterdiscord & spicetify themes
 # .gitconfig
+# Organize icons on desktop??

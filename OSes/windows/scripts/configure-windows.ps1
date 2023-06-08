@@ -8,7 +8,7 @@ if (!(Verify-Elevated)) {
     exit
 }
 
-Write-Host "Configuring system.." -ForegroundColor "Yellow"
+Write-Host "Configuring system..." -ForegroundColor "Yellow"
 
 # Enable WSL2
 Enable-WindowsOptionalFeature -Online -All -FeatureName "Microsoft-Windows-Subsystem-Linux" -NoRestart -WarningAction SilentlyContinue | Out-Null
@@ -22,10 +22,13 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advan
 
 # Initialize Directories
 Write-Host "Initializing directories in ${HOME}: ..." -ForegroundColor "Yellow"
+New-Item -ItemType Directory -Force -Path ${HOME}\Code | Out-Null
 New-Item -ItemType Directory -Force -Path ${HOME}\Code\Personal | Out-Null
 New-Item -ItemType Directory -Force -Path ${HOME}\Code\Sandbox | Out-Null
+New-Item -ItemType Directory -Force -Path "${HOME}\Code\Others Code" | Out-Null
 New-Item -ItemType Directory -Force -Path ${HOME}\Tools | Out-Null
 New-Item -ItemType Directory -Force -Path ${HOME}\Tools\Scripts | Out-Null
+New-Item -ItemType Directory -Force -Path ${HOME}\Files | Out-Null
 
 # Pin Directories to File Explorer QuickAccess
 Write-Output "Pinning to Quick Access..." -ForegroundColor "Yellow"

@@ -65,6 +65,10 @@ h3 {
     padding: var(--padding);
 }
 
+ul {
+    list-style-position: inside;
+}
+
 #header {
     text-align: center;
     color: var(--color-primary);
@@ -86,6 +90,58 @@ h3 {
 #apps-container a {
     text-decoration: none;
     color: var(--color-primary);
+}
+
+#text-container {
+    /* display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    padding: 5px;
+    justify-content: left; */
+    display: grid;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#text-container a {
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.text-item {
+    margin: .5rem;
+    padding: 10px;
+    box-shadow: var(--shadow);
+    background: var(--bg-secondary);
+    border-radius: var(--rounded);
+    transition: background-color .5s;
+}
+
+.text-header {
+    font-size: 18;
+}
+
+.text-subheader {
+    font-weight: bold;
+}
+
+.text-subtext {
+    text-indent: 13px;
+}
+
+.text {
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 8px;
+}
+
+.text span {
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none !important;
 }
 
 .main-header {

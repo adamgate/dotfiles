@@ -43,7 +43,7 @@ Write-Output "Installing config files..." -ForegroundColor "Yellow"
 # oh my posh themes
 # powershell configs
     # oh my posh theme
-    # font
+    # nerd font
 # windows terminal themes & settings
 # neovim config
 # browser startpage

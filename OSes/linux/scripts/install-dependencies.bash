@@ -3,7 +3,10 @@
 echo 'Installing package managers...'
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf install curl  
+sudo dnf install -y flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+sudo dnf install -y curl  
 
 sudo dnf install dnf-plugins-core -y
 sudo dnf install -y fedora-workstation-repositories
@@ -22,6 +25,11 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.1/install.sh | b
 nvm install -lts
 # sudo dnf install nodejs
 
+
+# Editors
+sudo dnf install -y neovim python3-neovim
+sudo dnf install code -y
+
  ## Docker Core
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
@@ -32,11 +40,6 @@ sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 
 #Add dropbox with similar method to docker desktop
 
-# Editors
-sudo dnf install -y neovim python3-neovim
-sudo dnf install code -y
-
-
 # ClI Tools
 sudo dnf copr enable keefle/cbonsai -y
 sudo dnf copr enable atim/bottom -y
@@ -45,3 +48,7 @@ sudo dnf install bottom -y
 
 # Misc
 sudo dnf install steam -y
+sudo flatpak install flathub org.mozilla.firefox -y
+sudo flatpak install flathub com.spotify.Client -y
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install discord -y

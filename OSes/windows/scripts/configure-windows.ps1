@@ -38,6 +38,8 @@ function Ensure-Admin-Privileges {
     }
 }
 
+# TODO- make this work
+# Updates a folder's icon with the provided one
 function Update-Folder-Icon ($FolderPath, $IconPath) {
     $WScriptShell = New-Object -ComObject WScript.Shell
     $shortcut = $WScriptShell.CreateShortcut($FolderPath)
@@ -49,7 +51,7 @@ function Update-Folder-Icon ($FolderPath, $IconPath) {
 
 ##########################################
 #
-#          Entry Point
+#              Entry Point
 #
 ##########################################
 
@@ -93,6 +95,7 @@ New-Item -ItemType Directory -Force -Path "${HOME}\Desktop\ROMS" | Out-Null
 Write-Host "Custom directory setup created."
 
 # Set icons if they're available
+# TODO - move the icons to this repositor
 $iconPath = "${HOME}\Dropbox\Other\Icons\ICO"
 if ((Test-Path -Path $iconPath)) {
     Update-Folder-Icon -FolderPath "${HOME}\Desktop\Misc Programs" -IconPath "${iconPath}\gear.ico"

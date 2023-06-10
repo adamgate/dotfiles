@@ -3,7 +3,7 @@ This repo is a catch-all for configs on various operating systems and hardware. 
 
 ### This repository contains:
 - editor configs
-- keymaps (QMK, ZMK, VIA/VIAL, etc) for several keyboards I use
+- custom keymaps (QMK, ZMK, VIA/VIAL, etc) that I built for several keyboards I use
 - Linux & KDE dotfiles
 - Windows configs 
 - browser startpages

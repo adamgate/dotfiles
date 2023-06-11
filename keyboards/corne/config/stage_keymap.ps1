@@ -27,7 +27,7 @@ function Stage-Keymap {
     if ((Get-FileHash "corne.conf").Hash -eq (Get-FileHash ".\${Folder}\corne.conf").Hash -and
         (Get-FileHash "corne.keymap").Hash -eq (Get-FileHash ".\${Folder}\corne.keymap").Hash -and
         (Get-FileHash "west.yml").Hash -eq (Get-FileHash ".\${Folder}\west.yml").Hash) {
-            return Write-Host "The keymap '${Folder}' is already loaded. Exiting... `n" -ForegroundColor Blue
+            return Write-Host "The keymap '${Folder}' is already staged. Exiting... `n" -ForegroundColor Blue
         }
     
     Copy-Item -Path ".\${Folder}\*" -Destination . -Force -Include *.conf,*.keymap,*.yml

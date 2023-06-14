@@ -32,7 +32,7 @@ function Ensure-Admin-Privileges {
 }
 
 function Test-Internet-Connection {
-    return Test-Connection -TargetName -Quiet
+    return Test-Connection www.google.com -Quiet
 }
 
 function Restart-PowerShell

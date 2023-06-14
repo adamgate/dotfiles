@@ -18,6 +18,7 @@ Write-Host "Configuring system..." -ForegroundColor "Yellow"
 # Enable WSL2
 Enable-WindowsOptionalFeature -Online -All -FeatureName VirtualMachinePlatform, Microsoft-Windows-Subsystem-Linux -NoRestart -WarningAction SilentlyContinue | Out-Null
 wsl --set-default-version 2
+wsl --update
 Write-Host "WSL2 enabled."
 
 # Show hidden files by default
@@ -69,15 +70,25 @@ $o.Namespace("${HOME}:\Files").Self.InvokeVerb("pintohome")
 Write-Output "Custom directories pinned to quick access."
 # TODO: unpin unwanted folders
 
+
 # Export config files to their proper location
-Write-Output "Installing config files..." -ForegroundColor "Yellow"
+Write-Host "Installing config files..." -ForegroundColor Yellow
+
+# powershell config
+New-Item $HOME/Documents/WindowsPowerShell -ItemType Directory -Force | Out-Null
+Copy-Item -Path ../powershell/profile.ps1 -Destination $HOME/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1 -Force | Out-Null
+
 # oh my posh themes
-# powershell configs
-# oh my posh theme
-# nerd font
+Copy-Item -Path ../../cross-platform/oh-my-posh/everforest.omp.json -Destination $env:POSH_THEMES_PATH | Out-Null
+Copy-Item -Path ../../cross-platform/oh-my-posh/gruvbox-simple.omp.json -Destination $env:POSH_THEMES_PATH | Out-Null
+
 # windows terminal themes & settings
+Copy-Item -Path ../terminal/settings.json -Destination $HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState | Out-Null
+
 # neovim config
-# browser startpage
-# betterdiscord & spicetify themes
-# .gitconfig
-# Organize icons on desktop??
+New-Item $HOME/.nvim -ItemType Directory -Force | Out-Null
+Copy-Item -path ../../cross-platform/vim/*.vim -Destination $HOME/.nvim | Out-Null
+
+# git
+Copy-Item -Path ../../cross-platform/git/.gitconfig -Destination $HOME | Out-Null
+

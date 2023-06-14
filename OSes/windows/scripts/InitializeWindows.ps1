@@ -13,7 +13,7 @@ if (-not (Test-Internet-Connection)) {
     exit
 }
 
-./InstallDependencies.ps1  -Confirm:$false
+# ./InstallDependencies.ps1  -Confirm:$false
 ./ConfigureWindows.ps1  -Confirm:$false
 
 $WarningPreference = 2 # Continue

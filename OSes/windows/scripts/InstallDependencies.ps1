@@ -14,7 +14,7 @@ $status[0] = choco install visualstudio2022community -y --params="'--includeReco
 
 $status[0] = choco install python2 python3 nvm jre8 jdk8 powershell-core microsoft-windows-terminal vscode docker-desktop `
 azure-data-studio sql-server-management-studio neovim oh-my-posh powertoys firefox googlechrome discord `
-betterdiscord spotify spicetify-cli steam obs-studio gimp vlc 7zip.install adobereader `
+betterdiscord steam obs-studio gimp vlc 7zip.install adobereader `
 -y | Out-Null
 
 Invoke-WebRequest -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | `New-Item "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force | Out-Null
@@ -23,6 +23,7 @@ refreshenv
 
 oh-my-posh font install CascadiaCode | Out-Null
 nvm install --lts
+nvm use lts
 
 foreach ($element in $status) {
     if (($element -eq 1) -or ($element -eq -1))

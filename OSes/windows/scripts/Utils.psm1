@@ -31,6 +31,10 @@ function Ensure-Admin-Privileges {
     }
 }
 
+function Test-Internet-Connection {
+    return Test-Connection -TargetName -Quiet
+}
+
 function Restart-PowerShell
 {
     if((Get-PSHostProcessInfo).ProcessName.Contains('powershell_ise'))

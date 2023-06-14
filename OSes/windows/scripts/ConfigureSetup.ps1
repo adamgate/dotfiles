@@ -15,9 +15,6 @@ function Update-Folder-Icon ($FolderPath, $IconPath) {
 
 Write-Host "Configuring system..." -ForegroundColor "Yellow"
 
-# TODO- remove this (needs testing in VM first)
-exit 
-
 # Enable WSL2
 Enable-WindowsOptionalFeature -Online -All -FeatureName VirtualMachinePlatform, Microsoft-Windows-Subsystem-Linux -NoRestart -WarningAction SilentlyContinue | Out-Null
 wsl --set-default-version 2

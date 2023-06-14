@@ -1,55 +1,35 @@
 ##########################################
 #              Entry Point
 ##########################################
-
+Write-Host "Please plug in your computer. This will take a while." -ForegroundColor Red
 Write-Host "Installing Package Managers..." -ForegroundColor "Yellow"
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-Update-SessionEnvironment
-
-Write-Host "Installing PowerShell Modules..." -ForegroundColor "Yellow"
-Install-Module -Name Posh-Git -Scope CurrentUser -Force
-
+refreshenv
 
 Write-Host "Installing Packages..." -ForegroundColor "Yellow"
-choco install git            -y --params="'/GitAndUnixToolsOnPath /NoAutoCrlf'"
-choco install python2        -y
-choco install python3        -y
-choco install nvm            -y  # choco install nodejs.install -y
-choco install jre8           -y
-choco install jdk8           -y
+$status = 0, 0, 0
+$status[0] = choco install git -y --params="'/GitAndUnixToolsOnPath /NoAutoCrlf'"
+$status[0] = choco install visualstudio2022community -y --params="'--includeRecommended --add Microsoft.VisualStudio.Workload.Data --add Microsoft.VisualStudio.Workload.Azure -add Microsoft.VisualStudio.Workload.ManagedGame -add Microsoft.VisualStudio.Workload.NativeDesktopproductArchx64-add Microsoft.VisualStudio.Workload.NetWebproductArchx64'"
 
-choco install powershell-core              -y
-choco install microsoft-windows-terminal   -y
-choco install visualstudio2022community    -y --params="'--includeRecommended --add Microsoft.VisualStudio.Workload.Data --add Microsoft.VisualStudio.Workload.Azure -add Microsoft.VisualStudio.Workload.ManagedGame -add Microsoft.VisualStudio.Workload.NativeDesktopproductArchx64-add Microsoft.VisualStudio.Workload.NetWebproductArchx64'"
-choco install vscode                       -y
-choco install docker-desktop               -y
-choco install azure-data-studio            -y
-choco install sql-server-management-studio -y
-choco install neovim                       -y
-choco install oh-my-posh                   -y
-choco install powertoys                    -y
-# TODO: find a way to download FancyWM
+$status[0] = choco install python2 python3 nvm jre8 jdk8 powershell-core microsoft-windows-terminal vscode docker-desktop \
+azure-data-studio sql-server-management-studio neovim oh-my-posh powertoys firefox googlechrome discord \ 
+betterdiscord spotify spicetify-cli steam obs-studio gimp vlc 7zip.install adobereader \
+-y | Out-Null
 
-choco install firefox       -y
-choco install googlechrome  -y
-choco install discord       -y
-choco install betterdiscord -y
-choco install spotify       -y
-choco install spicetify-cli -y
-choco install dropbox       -y
-choco install steam         -y
-choco install obs-studio    -y
-choco install gimp          -y
+Invoke-WebRequest -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | `New-Item "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force | Out-Null
 
-choco install vlc          -y
-choco install 7zip.install -y
-choco install adobereader  -y
-
-Update-SessionEnvironment
+refreshenv
 
 oh-my-posh font install CascadiaCode | Out-Null
 nvm install --lts
 
-# Install vim-plug
-Invoke-WebRequest -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | `New-Item "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force | Out-Null
+foreach ($element in $status) {
+    if (($element -eq 1) -or ($element -eq -1))
+    {
+        Write-Host "There was an issue installing one or more apps." -ForegroundColor Red
+        return
+    }
+}
+
+Write-Host "Apps were installed successfully. Please restart your computer as soon as possible." -ForegroundColor Green

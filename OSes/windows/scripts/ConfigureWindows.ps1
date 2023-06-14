@@ -8,7 +8,6 @@ function Update-Folder-Icon ($FolderPath, $IconPath) {
     $shortcut.Save()
 }
 
-
 ##########################################
 #              Entry Point
 ##########################################
@@ -64,9 +63,9 @@ else {
 # Pin Directories to File Explorer QuickAccess
 $o = new-object -com shell.application
 $o.Namespace("$env:USERPROFILE").Self.InvokeVerb("pintohome")
-$o.Namespace("${HOME}:\Code").Self.InvokeVerb("pintohome")
-$o.Namespace("${HOME}:\Tools").Self.InvokeVerb("pintohome")
-$o.Namespace("${HOME}:\Files").Self.InvokeVerb("pintohome")
+$o.Namespace("${HOME}\Code").Self.InvokeVerb("pintohome")
+$o.Namespace("${HOME}\Tools").Self.InvokeVerb("pintohome")
+$o.Namespace("${HOME}\Files").Self.InvokeVerb("pintohome")
 Write-Output "Custom directories pinned to quick access."
 # TODO: unpin unwanted folders
 
@@ -83,7 +82,7 @@ Copy-Item -Path ../../cross-platform/oh-my-posh/everforest.omp.json -Destination
 Copy-Item -Path ../../cross-platform/oh-my-posh/gruvbox-simple.omp.json -Destination $env:POSH_THEMES_PATH | Out-Null
 
 # windows terminal themes & settings
-Copy-Item -Path ../terminal/settings.json -Destination $HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState | Out-Null
+Copy-Item -Path ../terminal/settings.json -Destination $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState | Out-Null
 
 # neovim config
 New-Item $HOME/.nvim -ItemType Directory -Force | Out-Null
@@ -92,3 +91,5 @@ Copy-Item -path ../../cross-platform/vim/*.vim -Destination $HOME/.nvim | Out-Nu
 # git
 Copy-Item -Path ../../cross-platform/git/.gitconfig -Destination $HOME | Out-Null
 
+# vscode
+Copy-Item -path ../../cross-platform/vscode/everforest-dark.json -Destination $HOME\.vscode\extensions\sainnhe.everforest-0.3.0\themes\everforest-dark.json -Force | Out-Null

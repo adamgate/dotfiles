@@ -1,37 +1,21 @@
-# Check to see if we are currently running as Admin
-if (!(Verify-Elevated)) {
-    $newProcess = new-object System.Diagnostics.ProcessStartInfo "PowerShell";
-    $newProcess.Arguments = $myInvocation.MyCommand.Definition;
-    $newProcess.Verb = "runas";
-    [System.Diagnostics.Process]::Start($newProcess);
- 
-    exit
-}
+##########################################
+#              Entry Point
+##########################################
 
-
-# Get Package Managers
 Write-Host "Installing Package Managers..." -ForegroundColor "Yellow"
-Get-PackageProvider Chocolatey -Force | Out-Null
-Get-PackageProvider NuGet -Force | Out-Null
-Get-PackageProvider Winget -Force | Out-Null
-Get-PackageProvider Scoop -Force | Out-Null
-# Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-Refresh-Environment
+Update-SessionEnvironment
 
-
-# Install PowerShell Modules
 Write-Host "Installing PowerShell Modules..." -ForegroundColor "Yellow"
-# Install-Module Posh-Git -Scope CurrentUser -Force
+Install-Module -Name Posh-Git -Scope CurrentUser -Force
 
 
-# Install Applications
 Write-Host "Installing Packages..." -ForegroundColor "Yellow"
 choco install git            -y --params="'/GitAndUnixToolsOnPath /NoAutoCrlf'"
 choco install python2        -y
 choco install python3        -y
-choco install nvm            -y
-# choco install nodejs.install -y
+choco install nvm            -y  # choco install nodejs.install -y
 choco install jre8           -y
 choco install jdk8           -y
 
@@ -62,11 +46,10 @@ choco install vlc          -y
 choco install 7zip.install -y
 choco install adobereader  -y
 
-# Restart Shell
-Refresh-Environment
+Update-SessionEnvironment
 
 oh-my-posh font install CascadiaCode | Out-Null
 nvm install --lts
-# Install vim-plug
 
+# Install vim-plug
 Invoke-WebRequest -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | `New-Item "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force | Out-Null

@@ -1,43 +1,3 @@
-##########################################
-#
-#          Utility Functions
-#
-##########################################
-
-function Check-Intent {
-    Write-Host "**IMPORTANT** Ensure that you have run the 'install-dependencies' script before running this." -ForegroundColor Yellow
-    $confirmation = Read-Host "Are you sure you want to run this script? It could mess up your system (y or n)"
-    
-    if ($confirmation -ne 'y') {
-        Write-Host "System configuration has been cancelled. Exiting... `n" -ForegroundColor Red
-        exit
-    }
-}
-
-# Check if the shell has Admin privileges
-function Check-Admin-Privileges {  
-    $user = [Security.Principal.WindowsIdentity]::GetCurrent();
-    return (New-Object Security.Principal.WindowsPrincipal $user).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)  
-}
-
-# Restart as admin if shell isn't already
-function Ensure-Admin-Privileges {
-    Write-Host "Ensuring shell has admin privileges..."
-    if (!(Check-Admin-Privileges)) {
-        Write-Host "Admin privileges are not enabled for this shell. Please launch the script from an admin window. `n" -ForegroundColor Yellow
-        exit
-        
-        # Relaunch script in elevated shell
-        # Write-Host "Admin privileges were not found. Attempting to re-launch script in admin shell..." -ForegroundColor Yellow
-        # $newProcess = new-object System.Diagnostics.ProcessStartInfo "PowerShell";
-        # $newProcess.Arguments = $myInvocation.MyCommand.Definition;
-        # $newProcess.Verb = "runas";
-        # [System.Diagnostics.Process]::Start($newProcess);
-        
-        # exit
-    }
-}
-
 # TODO- make this work
 # Updates a folder's icon with the provided one
 function Update-Folder-Icon ($FolderPath, $IconPath) {
@@ -50,13 +10,8 @@ function Update-Folder-Icon ($FolderPath, $IconPath) {
 
 
 ##########################################
-#
 #              Entry Point
-#
 ##########################################
-
-Check-Intent
-Ensure-Admin-Privileges
 
 Write-Host "Configuring system..." -ForegroundColor "Yellow"
 
@@ -95,8 +50,8 @@ New-Item -ItemType Directory -Force -Path "${HOME}\Desktop\ROMS" | Out-Null
 Write-Host "Custom directory setup created."
 
 # Set icons if they're available
-# TODO - move the icons to this repositor
-$iconPath = "${HOME}\Dropbox\Other\Icons\ICO"
+# TODO - move the icons to this repository
+$iconPath = "..\..\cross platform\Icons\ICO"
 if ((Test-Path -Path $iconPath)) {
     Update-Folder-Icon -FolderPath "${HOME}\Desktop\Misc Programs" -IconPath "${iconPath}\gear.ico"
     Update-Folder-Icon -FolderPath "${HOME}\Desktop\Loose Games" -IconPath "${iconPath}\game-controller.ico"

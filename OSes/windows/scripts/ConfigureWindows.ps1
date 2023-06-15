@@ -14,11 +14,15 @@ function Update-Folder-Icon ($FolderPath, $IconPath) {
 
 Write-Host "Configuring system..." -ForegroundColor "Yellow"
 
-# Enable WSL2
+# Enable WSL2 & install fedora
+# Todo- add branching logic based on the presence of the rootfs file
 Enable-WindowsOptionalFeature -Online -All -FeatureName VirtualMachinePlatform, Microsoft-Windows-Subsystem-Linux -NoRestart -WarningAction SilentlyContinue | Out-Null
-wsl --set-default-version 2
-wsl --update
-Write-Host "WSL2 enabled."
+wsl --set-default-version 2 | Out-Null
+wsl --update | Out-Null
+New-Item -ItemType Directory -Force -Path $HOME\wsl\fedora | Out-Null
+wsl --import fedora $HOME\wsl\fedora $HOME\Downloads\fedora-rootfs.tar | Out-Null
+wsl -s fedora | Out-Null
+Write-Host "WSL2 enabled. Fedora installed and set to default."
 
 # Show hidden files by default
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "Hidden" 1
@@ -57,7 +61,7 @@ if ((Test-Path -Path $iconPath)) {
     Write-Host "Desktop folder icons set."
 }
 else {
-    Write-Host "Couldn't find the icons folder. Ensure Dropbox is installed and set the icons yourself." -ForegroundColor Red
+    Write-Host "Couldn't find the icons folder. You will have to set the icons yourself." -ForegroundColor Red
 }
 
 # Pin Directories to File Explorer QuickAccess
@@ -93,3 +97,5 @@ Copy-Item -Path ../../cross-platform/git/.gitconfig -Destination $HOME | Out-Nul
 
 # vscode
 Copy-Item -path ../../cross-platform/vscode/everforest-dark.json -Destination $HOME\.vscode\extensions\sainnhe.everforest-0.3.0\themes\everforest-dark.json -Force | Out-Null
+
+WriteHost "System configuration complete." -ForegroundColor Green

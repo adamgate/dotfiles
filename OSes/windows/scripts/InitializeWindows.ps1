@@ -1,9 +1,9 @@
-Write-Host "Before you can run this script you'll have use the following command: Set-ExecutionPolicy Restricted"
-
-$WarningPreference = 0 # SilentlyContinue
-$ErrorActionPreference = 0 # SilentlyContinue
+# $WarningPreference = 0 # SilentlyContinue
+# $ErrorActionPreference = 0 # SilentlyContinue
 
 ./LoadPSModules.ps1 -Confirm:$false
+
+Write-Host "Please ensure you have the file 'fedora-rootfs.tar' in the Downloads directory. Otherwise WSL won't be completely enabled." -ForegroundColor Magenta
 
 Check-Intent
 Ensure-Admin-Privileges

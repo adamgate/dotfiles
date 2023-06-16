@@ -1,7 +1,13 @@
-$moduleDir = "$HOME\Documents\WindowsPowerShell\Modules\Utils"
+$moduleDirs = @("$HOME\Documents\WindowsPowerShell\Modules\Utils",
+               "$HOME\Documents\PowerShell\Modules\Utils"
+)
 
-Write-Host "Loading powershell utility functions..."
-New-Item $moduleDir -ItemType Directory -Force | Out-Null
+Write-Host "Loading custom powershell modules..."
 
-Copy-Item -Path ./Utils.psm1 -Destination $moduleDir | Out-Null
+foreach($dir in $moduleDirs) {
+    New-Item $dir -ItemType Directory -Force | Out-Null
+    Copy-Item -Path ./Utils.psm1 -Destination $dir | Out-Null
+}
+
 Import-Module Utils | Out-Null
+Write-Host "Successfully loaded custom powershell modules." -ForegroundColor Green

@@ -6,9 +6,9 @@
 Write-Host "Please ensure you have the file 'fedora-rootfs.tar' in the Downloads directory. Otherwise WSL won't be completely enabled." -ForegroundColor Magenta
 
 Get-Intent
-Confirm-Admin-Privileges
+Grant-AdminPrivileges
 
-if (-not (Test-Internet-Connection)) {
+if (-not (Test-InternetConnection)) {
     Write-Host "You aren't connected to the internet. Please connect and try again."
     exit
 }

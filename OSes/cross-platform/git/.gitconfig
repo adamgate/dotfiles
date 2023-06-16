@@ -2,14 +2,20 @@
 	name = adamgate
 	email = applegateadaml@gmail.com
 
+[core]
+	editor = code --wait
+
 [web]
 	browser = firefox
+
+[fetch]
+	prune = true
 
 [alias]
 	co = checkout
 	br = branch
 	ci = commit
 	st = status
-	ba = !git branch -a
-	fp = !git fetch -p
-	prb = !git pull --rebase
+	ba = branch -a
+	fp = fetch -p
+	prb = pull --rebase

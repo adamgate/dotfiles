@@ -1,4 +1,4 @@
-function Check-Intent {
+function Get-Intent {
     $confirmation = Read-Host "Are you sure you want to run this script? It could mess up your system (y or n)"
     
     if ($confirmation -ne 'y') {
@@ -8,15 +8,15 @@ function Check-Intent {
 }
 
 # Check if the shell has Admin privileges
-function Check-Admin-Privileges {  
+function Confirm-Admin-Privileges {  
     $user = [Security.Principal.WindowsIdentity]::GetCurrent();
     return (New-Object Security.Principal.WindowsPrincipal $user).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)  
 }
 
 # Restart as admin if shell isn't already
-function Ensure-Admin-Privileges {
+function Grant-Admin-Privileges {
     Write-Host "Ensuring shell has admin privileges..."
-    if (!(Check-Admin-Privileges)) {
+    if (!(Confirm-Admin-Privileges)) {
         Write-Host "Admin privileges are not enabled for this shell. Please launch the script from an admin window. `n" -ForegroundColor Yellow
         exit
         

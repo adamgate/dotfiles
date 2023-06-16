@@ -72,27 +72,14 @@ Write-Output "Directories pinned to quick access."
 # TODO: unpin unwanted folders
 
 # Export config files to their proper location
-Write-Host "Installing config files..." -ForegroundColor Yellow
+Write-Host "Exporting configuration files..." -ForegroundColor Yellow
+./exports/export-discord.ps1 -Confirm:$false | Out-Null
+./exports/export-git.ps1 -Confirm:$false | Out-Null
+./exports/export-omp.ps1 -Confirm:$false | Out-Null
+./exports/export-powershell.ps1 -Confirm:$false | Out-Null
+./exports/export-vim.ps1 -Confirm:$false | Out-Null
+./exports/export-vscode.ps1 -Confirm:$false | Out-Null
+./exports/export-windows-terminal.ps1 -Confirm:$false | Out-Null
+Write-Host "Configuration files exported."
 
-# powershell config
-New-Item $HOME/Documents/WindowsPowerShell -ItemType Directory -Force | Out-Null
-Copy-Item -Path ../powershell/profile.ps1 -Destination $HOME/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1 -Force | Out-Null
-
-# oh my posh themes
-Copy-Item -Path ../../cross-platform/oh-my-posh/everforest.omp.json -Destination $env:POSH_THEMES_PATH | Out-Null
-Copy-Item -Path ../../cross-platform/oh-my-posh/gruvbox-simple.omp.json -Destination $env:POSH_THEMES_PATH | Out-Null
-
-# windows terminal themes & settings
-Copy-Item -Path ../terminal/settings.json -Destination $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState | Out-Null
-
-# neovim config
-New-Item $HOME/.nvim -ItemType Directory -Force | Out-Null
-Copy-Item -path ../../cross-platform/vim/*.vim -Destination $HOME/.nvim | Out-Null
-
-# git
-Copy-Item -Path ../../cross-platform/git/.gitconfig -Destination $HOME | Out-Null
-
-# vscode
-Copy-Item -path ../../cross-platform/vscode/everforest-dark.json -Destination $HOME\.vscode\extensions\sainnhe.everforest-0.3.0\themes\everforest-dark.json -Force | Out-Null
-
-WriteHost "System configuration complete." -ForegroundColor Green
+Write-Host "System configuration complete." -ForegroundColor Green

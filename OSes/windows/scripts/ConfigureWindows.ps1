@@ -51,18 +51,12 @@ New-Item -ItemType Directory -Force -Path "${HOME}\Desktop\ROMS" | Out-Null
 Write-Host "Custom directory setup created."
 
 # Set icons if they're available
-# TODO - move the icons to this repository
-$iconPath = "..\..\cross platform\Icons\ICO"
-if ((Test-Path -Path $iconPath)) {
-    Update-Folder-Icon -FolderPath "${HOME}\Desktop\Misc Programs" -IconPath "${iconPath}\gear.ico"
-    Update-Folder-Icon -FolderPath "${HOME}\Desktop\Loose Games" -IconPath "${iconPath}\game-controller.ico"
-    Update-Folder-Icon -FolderPath "${HOME}\Desktop\Production" -IconPath "${iconPath}\digital-art.ico"
-    Update-Folder-Icon -FolderPath "${HOME}\Desktop\ROMS" -IconPath "${iconPath}\arcade_game_cabinet_S1C_icon.ico"
-    Write-Host "Desktop folder icons set."
-}
-else {
-    Write-Host "Couldn't find the icons folder. You will have to set the icons yourself." -ForegroundColor Red
-}
+$iconPath = "..\icons\"
+Update-Folder-Icon -FolderPath "${HOME}\Desktop\Misc Programs" -IconPath "${iconPath}\gear.ico"
+Update-Folder-Icon -FolderPath "${HOME}\Desktop\Loose Games" -IconPath "${iconPath}\game-controller.ico"
+Update-Folder-Icon -FolderPath "${HOME}\Desktop\Production" -IconPath "${iconPath}\production.ico"
+Update-Folder-Icon -FolderPath "${HOME}\Desktop\ROMS" -IconPath "${iconPath}\arcade_game.ico"
+Write-Host "Desktop folder icons set."
 
 # Pin Directories to File Explorer QuickAccess
 $o = new-object -com shell.application

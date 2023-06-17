@@ -8,5 +8,5 @@ if (-not $dir) {
 }
 else {
     Copy-Item -path ../terminal/settings.json -Destination $dir\LocalState -Force | Out-Null
-    Write-Host "Exported Windows Terminal settings successfully." - -ForegroundColor Green
+    Write-Host "Exported Windows Terminal settings successfully." -ForegroundColor Green
 }

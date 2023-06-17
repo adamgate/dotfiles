@@ -8,5 +8,5 @@ if (-not $dir) {
 }
 else {
     Copy-Item -path ../../cross-platform/vscode/everforest-dark.json -Destination $dir\themes -Force | Out-Null
-    Write-Host "Exported vscode themes successfully." - -ForegroundColor Green
+    Write-Host "Exported vscode themes successfully." -ForegroundColor Green
 }

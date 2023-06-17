@@ -7,6 +7,6 @@ if (-not $dir) {
    Write-Host "Couldn't find the directory to export the windows terminal settings file. Please ensure Windows Terminal is installed." -ForegroundColor Red
 }
 else {
-    Copy-Item -path ../../terminal/settings.json -Destination $dir\LocalState -Force | Out-Null
+    Copy-Item -path ../terminal/settings.json -Destination $dir\LocalState -Force | Out-Null
     Write-Host "Exported Windows Terminal settings successfully." - -ForegroundColor Green
 }

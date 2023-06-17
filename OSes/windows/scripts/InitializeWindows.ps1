@@ -10,7 +10,7 @@ if (-not (Test-InternetConnection)) {
     exit
 }
 
-./InstallDependencies.ps1  -Confirm:$false
+./InstallDependencies.ps1 -Confirm:$false
 ./ConfigureWindows.ps1 -Confirm:$false
 
 $confirmation = Read-Host "System initialization has finished. A system reboot is recommended. Would you like to do that now?"

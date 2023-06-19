@@ -74,12 +74,12 @@ Write-Output "Directories pinned to quick access."
 # Export config files to their proper location
 Write-Host "Exporting configuration files..." -ForegroundColor Yellow
 ./exports/export-discord.ps1 -Confirm:$false | Out-Null
+./exports/export-fancywm.ps1 -Confirm:$false | Out-Null
 ./exports/export-git.ps1 -Confirm:$false | Out-Null
 ./exports/export-omp.ps1 -Confirm:$false | Out-Null
 ./exports/export-powershell.ps1 -Confirm:$false | Out-Null
 ./exports/export-vim.ps1 -Confirm:$false | Out-Null
 ./exports/export-vscode.ps1 -Confirm:$false | Out-Null
 ./exports/export-windows-terminal.ps1 -Confirm:$false | Out-Null
-Write-Host "Configuration files exported."
 
 Write-Host "System configuration complete." -ForegroundColor Green

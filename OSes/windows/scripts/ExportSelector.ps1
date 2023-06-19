@@ -1,5 +1,6 @@
 $exports = @{
     Discord         = './exports/export-discord.ps1';
+    FancyWM         = './exports/export-fancywm.ps1';
     Git             = './exports/export-git.ps1';
     Omp             = './exports/export-omp.ps1';
     Powershell      = './exports/export-powershell.ps1';
@@ -8,7 +9,7 @@ $exports = @{
     WindowsTerminal = './exports/export-windows-terminal.ps1';
 }
 
-Write-Host "Config files available to export are: All, Discord, Git, Oh My Posh (Omp), Powershell, Vim, Vscode, & Windows Terminal."
+Write-Host "Config files available to export are: All, Discord, FancyWM (fwm) Git, Oh My Posh (omp), Powershell, Vim, Vscode, & Windows Terminal."
 $selection = Read-Host "Which files would you like to export? "
 
 if ($selection.toLower() -eq 'all') {
@@ -20,6 +21,10 @@ if ($selection.toLower() -eq 'all') {
 if ($selection.toLower() -eq 'discord') {
     Write-Host "Exporting Discord themes..." -ForegroundColor Yellow
     Invoke-Expression $exports.Discord | Out-Null
+}
+if ($selection.toLower() -eq 'fancywm' -or $selection.toLower() -eq 'fwm') {
+    Write-Host "Exporting Fancy Window Manager settings..." -ForegroundColor Yellow
+    Invoke-Expression $exports.FancyWM | Out-Null
 }
 if ($selection.toLower() -eq 'git') {
     Write-Host "Exporting git configuration files..." -ForegroundColor Yellow

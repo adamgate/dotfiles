@@ -1,6 +1,6 @@
-# TODO- make this work
 # Updates a folder's icon with the provided one
-function Update-Folder-Icon ($FolderPath, $IconPath) {
+# TODO- make this work
+function Update-FolderIcon ($FolderPath, $IconPath) {
     $WScriptShell = New-Object -ComObject WScript.Shell
     $shortcut = $WScriptShell.CreateShortcut($FolderPath)
     # $shortcut.TargetPath = $IconPath
@@ -54,20 +54,20 @@ Write-Host "Directory setup created."
 # TODO - initialize ROMS directory
 
 # Set desktop folder icons
-Write-Host "Updating desktop folder icons..." -ForegroundColor Yellow
-Update-Folder-Icon -FolderPath $dirs[8] -IconPath ".\icons\gear.ico"
-Update-Folder-Icon -FolderPath $dirs[9] -IconPath ".\icons\game-controller.ico"
-Update-Folder-Icon -FolderPath $dirs[10] -IconPath ".\icons\production.ico"
-Update-Folder-Icon -FolderPath $dirs[11] -IconPath ".\icons\arcade_game.ico"
-Write-Host "Desktop folder icons set."
+# Write-Host "Updating desktop folder icons..." -ForegroundColor Yellow
+# Update-FolderIcon -FolderPath $dirs[8] -IconPath ".\icons\gear.ico"            # \Misc Programs
+# Update-FolderIcon -FolderPath $dirs[9] -IconPath ".\icons\game-controller.ico" # \Loose Games
+# Update-FolderIcon -FolderPath $dirs[10] -IconPath ".\icons\production.ico"     # \Production
+# Update-FolderIcon -FolderPath $dirs[11] -IconPath ".\icons\arcade_game.ico"    # \ROMS
+# Write-Host "Desktop folder icons set."
 
 # Pin Directories to File Explorer QuickAccess
 Write-Host "Pinning folders to Quick Access..." -ForegroundColor Yellow
 $o = new-object -com shell.application
 $o.Namespace("$env:USERPROFILE").Self.InvokeVerb("pintohome")
-$o.Namespace($dirs[0]).Self.InvokeVerb("pintohome")
-$o.Namespace($dirs[4]).Self.InvokeVerb("pintohome")
-$o.Namespace($dirs[6]).Self.InvokeVerb("pintohome")
+$o.Namespace($dirs[0]).Self.InvokeVerb("pintohome") # \Code
+$o.Namespace($dirs[4]).Self.InvokeVerb("pintohome") # \Tools
+$o.Namespace($dirs[6]).Self.InvokeVerb("pintohome") # \Files
 Write-Output "Directories pinned to quick access."
 # TODO: unpin unwanted folders
 
@@ -78,6 +78,7 @@ Write-Host "Exporting configuration files..." -ForegroundColor Yellow
 ./exports/export-git.ps1 -Confirm:$false | Out-Null
 ./exports/export-omp.ps1 -Confirm:$false | Out-Null
 ./exports/export-powershell.ps1 -Confirm:$false | Out-Null
+./exports/export-spotify.ps1 -Confirm:$false | Out-Null
 ./exports/export-vim.ps1 -Confirm:$false | Out-Null
 ./exports/export-vscode.ps1 -Confirm:$false | Out-Null
 ./exports/export-windows-terminal.ps1 -Confirm:$false | Out-Null

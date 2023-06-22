@@ -47,7 +47,7 @@
             "background_templates": [
               "{{ if gt .Code 0 }}#e67e80{{ end }}"
             ],
-            "foreground": "#f9f5d7",
+            "foreground": "#272E33",
             "leading_diamond": "<transparent,background>\ue0b0</>",
             "properties": {
               "always_enabled": true

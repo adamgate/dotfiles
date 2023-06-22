@@ -4,7 +4,7 @@
   "AllocateNewPanelSpace": true,
   "AutoCollapsePanels": false,
   "AnimateWindowMovement": false,
-  "ModifierMoveWindow": false,
+  "ModifierMoveWindow": true,
   "ModifierMoveWindowAutoFocus": false,
   "WindowPadding": 4,
   "PanelHeight": 18,
@@ -434,12 +434,14 @@
   },
   "ProcessIgnoreList": [
     "Taskmgr",
-    "steam"
+    "Steam",
+    "Explorer",
+    "VsDebugConsole"
   ],
   "ClassIgnoreList": [
     "OperationStatusWindow"
   ],
-  "RemindToRateReview": true,
+  "RemindToRateReview": false,
   "ShowContextHints": true,
   "MultiMonitorSupport": true,
   "SoundOnFailure": true

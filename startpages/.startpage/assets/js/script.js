@@ -3,7 +3,7 @@ function search(event) {
     if (x == "Enter") {
         event.preventDefault()
         let text = document.getElementById("searchbar").value;
-        const url = `https://www.google.com/search?q=${encodeURI(text)}`
+        const url = `https://www.google.com/search?q=${encodeURIComponent(text)}`
         window.open(url, '_self');
     }
 }

@@ -1,17 +1,46 @@
 {
-"extends": "eslint:recommended",
+    "extends": [
+      "eslint:recommended",
+      "prettier"
+    ],
     "rules": {
         // enable additional rules
         "indent": ["error", 4],
         "linebreak-style": ["error", "unix"],
         "quotes": ["error", "double"],
         "semi": ["error", "always"],
+        "import/order": [
+            "error",
+            {
+                "alphabetize": {
+                    "caseInsensitive": "true",
+                    "order": "asc"
+                },
+                "groups": [
+                    "builtin",
+                    "external",
+                    "internal",
+                    "parent",
+                    "index",
+                    "sibling",
+                    "object",
+                    "type"
+                ],
+                "newlines-between": "always",
+                "pathGroups": [
+                    {
+                        "group": "internal",
+                        "pattern": "@/**"
+                    }
+                ]
+            }
+        ],
 
         // override configuration set by extending "eslint:recommended"
         "no-empty": "warn",
         "no-cond-assign": ["error", "always"],
 
         // disable rules from base configurations
-         "for-direction": "off",
+        "for-direction": "off"
     }
 }

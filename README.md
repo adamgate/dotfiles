@@ -3,9 +3,9 @@ This repo is a catch-all for configs on various operating systems and hardware. 
 
 ### This repository contains:
 - editor configs & themes
+- linting & code style configs
 - custom keymaps (QMK, ZMK, VIA/VIAL, etc) that I built for several keyboards I use
-- Linux & KDE dotfiles
-- Windows configs 
+- Windows configs
 - browser startpages
 - misc scripts
 

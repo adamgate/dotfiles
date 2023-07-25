@@ -1,6 +1,6 @@
 ./LoadPSModules.ps1 -Confirm:$false
 
-Write-Host "Please ensure you have the file 'fedora-rootfs.tar' in the Downloads directory. Otherwise WSL won't be completely enabled." -ForegroundColor Magenta
+Write-Host "Please ensure you have the file 'fedora-rootfs.tar' in the Downloads directory. Otherwise WSL2 won't be completely enabled." -ForegroundColor Magenta
 
 Get-Intent
 Grant-AdminPrivileges

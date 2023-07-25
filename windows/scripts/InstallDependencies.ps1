@@ -22,7 +22,7 @@ Invoke-WebRequest -useb https://raw.githubusercontent.com/junegunn/vim-plug/mast
 refreshenv
 
 Invoke-Expression (dotnet tool install -g csharpier)
-Invoke-Expression  (oh-my-posh font install CascadiaCode) | Out-Null
+Invoke-Expression (oh-my-posh font install CascadiaCode) | Out-Null
 Invoke-Expression (nvm install --lts)
 Invoke-Expression (nvm use lts)
 
@@ -30,7 +30,7 @@ foreach ($element in $status) {
     if (($element -eq 1) -or ($element -eq -1))
     {
         Write-Host "There was an issue installing one or more apps." -ForegroundColor Red
-        return
+        exit
     }
 }
 

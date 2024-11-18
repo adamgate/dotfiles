@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-US">
 
 <head>
   <title>New Tab</title>
@@ -12,8 +12,8 @@
   <main id="container" class="fade">
     <div class="main-header">
       <section id="header">
-        <h1 id="header-time">00:00</h1>
-        <h2 id="header-date">Date</h2>
+        <h1 id="header-date">[Date]</h1>
+        <h1 id="header-time">[If you see this, something is broken.]</h1>
       </section>
     </div>
     <br />
@@ -28,7 +28,7 @@
     <br />
     <div class="foreground-item">
     <section id="apps">
-      <h3 class="heading-container" style="--bg-header: #b16286;"> Favorites</h3>
+      <h3 class="heading-container" style="--bg-header: #b16286;">Favorites</h3>
       <div id="apps-container">
         <a class="apps-item" style="--bg-hover: #fb4934" href="https://www.youtube.com">
           <div class="apps-icon">
@@ -66,16 +66,6 @@
             <span>crunchyroll.com</span>
           </div>
         </a>
-        <a class="apps-item" style="--bg-hover: #b16286" href="https://messages.google.com/web/conversations">
-          <div class="apps-icon">
-            <span class="iconify icon"
-              data-icon="streamline:mail-chat-bubble-typing-square-messages-message-bubble-typing-square-chat"></span>
-          </div>
-          <div class="apps-text">
-            <span>Google Messages</span>
-            <span>messages.google.com</span>
-          </div>
-        </a>
         <a class="apps-item" style="--bg-hover: #a89984" href="https://mail.google.com/mail">
           <div class="apps-icon">
             <span class="iconify icon" data-icon="cib:gmail"></span>
@@ -88,9 +78,9 @@
       </div>
     </section>
     <section id="apps">
-      <h3 class="heading-container" style="--bg-header: #fb4934;"> Hobbies</h3>
+      <h3 class="heading-container" style="--bg-header: #fb4934;">Hobbies</h3>
      
-      <h4 class="heading-container" style="--bg-header: #fb4934;"> Tabletop Games</h4>
+      <h4 class="heading-container" style="--bg-header: #fb4934;">Tabletop Games</h4>
       <div id="apps-container">
         <a class="apps-item" style="--bg-hover: #fe8019" href="https://www.boardgamegeek.com/">
           <div class="apps-icon">
@@ -112,7 +102,7 @@
         </a>
         <a class="apps-item" style="--bg-hover: #fe8019" href="https://summonerwars.plaidhatgames.com/">
           <div class="apps-icon">
-            <span class="iconify icon" data-icon="arcticons:summoners-war"></span>
+            <span class="iconify icon" data-icon="game-icons:hood"></span>
           </div>
           <div class="apps-text">
             <span>Summoner Wars</span>
@@ -148,8 +138,17 @@
         </a>
         </div>
 
-        <h4 class="heading-container" style="--bg-header: #fb4934;"> Manga/Anime</h4>
+        <h4 class="heading-container" style="--bg-header: #fb4934;">Manga/Anime</h4>
         <div id="apps-container">
+          <a class="apps-item" style="--bg-hover: #83a598" href="https://mangadex.org/">
+            <div class="apps-icon">
+              <span class="iconify icon" data-icon="arcticons:mangadex"></span>
+            </div>
+            <div class="apps-text">
+              <span>MangaDex</span>
+              <span>mangadex.org</span>
+            </div>
+          </a>
           <a class="apps-item" style="--bg-hover: #83a598" href="https://myanimelist.net/">
             <div class="apps-icon">
               <span class="iconify icon" data-icon="simple-icons:myanimelist"></span>
@@ -164,23 +163,14 @@
               <span class="iconify icon" data-icon="simple-icons:webtoon"></span>
             </div>
             <div class="apps-text">
-              <span>Tower of God</span>
-              <span>tower-of-god</span>
+              <span>Webtoon</span>
+              <span>webtoons.com </span>
             </div>
           </a>
         </div>
 
-        <h4 class="heading-container" style="--bg-header: #fb4934;"> Reading</h4>
+        <h4 class="heading-container" style="--bg-header: #fb4934;">Reading</h4>
         <div id="apps-container">
-          <a class="apps-item" style="--bg-hover: #a89984" href="https://www.goodreads.com/">
-            <div class="apps-icon">
-              <span class="iconify icon" data-icon="ion:library"></span>
-            </div>
-            <div class="apps-text">
-              <span>Goodreads</span>
-              <span>goodreads.com</span>
-            </div>
-          </a>
           <a class="apps-item" style="--bg-hover: #b16286" href="https://www.libbyapp.com">
             <div class="apps-icon">
               <span class="iconify icon" data-icon="arcticons:libby"></span>
@@ -190,9 +180,18 @@
               <span>libbyapp.com</span>
             </div>
           </a>
+          <a class="apps-item" style="--bg-hover: #a89984" href="https://www.goodreads.com/">
+            <div class="apps-icon">
+              <span class="iconify icon" data-icon="fa6-brands:goodreads"></span>
+            </div>
+            <div class="apps-text">
+              <span>Goodreads</span>
+              <span>goodreads.com</span>
+            </div>
+          </a>
         </div>
 
-      <h4 class="heading-container" style="--bg-header: #fb4934;"> Video Games</h4>
+      <h4 class="heading-container" style="--bg-header: #fb4934;">Video Games</h4>
       <div id="apps-container">
         <a class="apps-item" style="--bg-hover: #d79921" href="https://store.steampowered.com/">
           <div class="apps-icon">
@@ -233,7 +232,7 @@
       </div>
     </section>
     <section id="apps">
-      <h3 class="heading-container" style="--bg-header: #d79921;"> Shopping</h3>
+      <h3 class="heading-container" style="--bg-header: #d79921;">Shopping</h3>
       </h3>
       <div id="apps-container">
         <a class="apps-item" style="--bg-hover: #a89984" href="https://www.amazon.com">
@@ -266,7 +265,7 @@
       </div>
     </section>
     <section id="apps">
-      <h3 class="heading-container" style="--bg-header: #458588;"> Programming</h3>
+      <h3 class="heading-container" style="--bg-header: #458588;">Programming Tools</h3>
       <div id="apps-container">
         <a class="apps-item" style="--bg-hover: #d79921" href="https://github.com/">
           <div class="apps-icon">
@@ -297,7 +296,7 @@
         </a>
     </section>
     <section id="apps">
-      <h3 class="heading-container" style=" --bg-header: #b8bb26;"> Learning & Career
+      <h3 class="heading-container" style=" --bg-header: #b8bb26;">Learning & Career
       </h3>
       <div id="apps-container">
         <a class="apps-item" style="--bg-hover: #83a598" href="https://www.linkedin.com/feed/">
@@ -318,19 +317,69 @@
             <span>udemy.com</span>
           </div>
         </a>
-        <a class="apps-item" style="--bg-hover: #fb4934" href="https://courses.wesbos.com/account">
+        <a class="apps-item" style="--bg-hover: #fe8019" href="https://www.pluralsight.com/">
           <div class="apps-icon">
-            <span class="iconify icon" data-icon="akar-icons:css-fill"></span>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="iconify icon" data-icon="simple-icons:pluralsight" style="vertical-align: -0.125em; transform: rotate(360deg);"><path fill="currentColor" d="M15.72 1.755C10.08-.301 3.811 2.625 1.771 8.25c-2.071 5.699.854 11.956 6.494 14.01c5.655 2.055 11.956-.87 14.01-6.51c2.057-5.67-.87-11.939-6.524-13.995zM12 24C5.4 24 0 18.6 0 12S5.4 0 12 0s12 5.4 12 12s-5.4 12-12 12M8.926 5.805v12.391L19.68 12zm1.049 1.769L17.625 12l-7.65 4.426zm-3.526-.419v9.689L14.85 12zm1.051 1.8L12.811 12L7.5 15.061V8.939"></path></svg>
           </div>
           <div class="apps-text">
-            <span>CSS Flexbox/Grid</span>
-            <span>courses.wesbos.com</span>
+              <span>PluralSight</span>
+              <span>pluralsight.com</span>
           </div>
-        </a>
+      </a>
       </div>
+
+        <h4 class="heading-container" style="--bg-header: #fb4934;">Blogs</h4>
+        <div id="apps-container">
+            <a class="apps-item" style="--bg-hover: #fe8019" href="https://devblogs.microsoft.com/dotnet/">
+                <div class="apps-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="iconify icon" data-icon="mdi:microsoft" style="vertical-align: -0.125em; transform: rotate(360deg);"><path fill="currentColor" d="M2 3h9v9H2zm9 19H2v-9h9zM21 3v9h-9V3zm0 19h-9v-9h9z"></path></svg>
+                </div>
+                <div class="apps-text">
+                    <span>.NET Blog</span>
+                    <span>devblogs.microsoft.com</span>
+                </div>
+            </a>
+            <a class="apps-item" style="--bg-hover: #a89984" href="https://www.hanselman.com/">
+                <div class="apps-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="-2 -2 24 24" class="iconify icon" data-icon="jam:blogger" style="vertical-align: -0.125em; transform: rotate(360deg);"><path fill="currentColor" d="M13.593 19.96c3.48 0 6.307-2.836 6.327-6.297l.039-5.095l-.059-.278l-.167-.348l-.283-.22c-.367-.287-2.228.02-2.729-.435c-.355-.324-.41-.91-.518-1.706c-.2-1.54-.326-1.62-.568-2.142C14.76 1.585 12.382.193 10.75 0H6.325C2.845 0 0 2.839 0 6.307v7.356c0 3.461 2.845 6.296 6.325 6.296h7.268zM6.406 5.151h3.507c.67 0 1.212.544 1.212 1.205c0 .657-.542 1.206-1.212 1.206H6.406c-.67 0-1.21-.549-1.21-1.206c0-.661.54-1.205 1.21-1.205m-1.21 8.418c0-.66.54-1.2 1.21-1.2h7.127c.665 0 1.205.54 1.205 1.2c0 .652-.54 1.2-1.205 1.2H6.406a1.21 1.21 0 0 1-1.21-1.2"></path></svg>
+                </div>
+                <div class="apps-text">
+                    <span>Scott Hanselman</span>
+                    <span>hanselman.com</span>
+                </div>
+            </a>
+            <a class="apps-item" style="--bg-hover: #b16286" href="https://www.meziantou.net">
+                <div class="apps-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="-2 -2 24 24" class="iconify icon" data-icon="jam:blogger" style="vertical-align: -0.125em; transform: rotate(360deg);"><path fill="currentColor" d="M13.593 19.96c3.48 0 6.307-2.836 6.327-6.297l.039-5.095l-.059-.278l-.167-.348l-.283-.22c-.367-.287-2.228.02-2.729-.435c-.355-.324-.41-.91-.518-1.706c-.2-1.54-.326-1.62-.568-2.142C14.76 1.585 12.382.193 10.75 0H6.325C2.845 0 0 2.839 0 6.307v7.356c0 3.461 2.845 6.296 6.325 6.296h7.268zM6.406 5.151h3.507c.67 0 1.212.544 1.212 1.205c0 .657-.542 1.206-1.212 1.206H6.406c-.67 0-1.21-.549-1.21-1.206c0-.661.54-1.205 1.21-1.205m-1.21 8.418c0-.66.54-1.2 1.21-1.2h7.127c.665 0 1.205.54 1.205 1.2c0 .652-.54 1.2-1.205 1.2H6.406a1.21 1.21 0 0 1-1.21-1.2"></path></svg>
+                </div>
+                <div class="apps-text">
+                    <span>Meziantou</span>
+                    <span>meziantou.net</span>
+                </div>
+            </a>
+            <a class="apps-item" style="--bg-hover: #b8bb26" href="https://www.smashingmagazine.com/">
+                <div class="apps-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="-2 -2 24 24" class="iconify icon" data-icon="jam:blogger" style="vertical-align: -0.125em; transform: rotate(360deg);"><path fill="currentColor" d="M13.593 19.96c3.48 0 6.307-2.836 6.327-6.297l.039-5.095l-.059-.278l-.167-.348l-.283-.22c-.367-.287-2.228.02-2.729-.435c-.355-.324-.41-.91-.518-1.706c-.2-1.54-.326-1.62-.568-2.142C14.76 1.585 12.382.193 10.75 0H6.325C2.845 0 0 2.839 0 6.307v7.356c0 3.461 2.845 6.296 6.325 6.296h7.268zM6.406 5.151h3.507c.67 0 1.212.544 1.212 1.205c0 .657-.542 1.206-1.212 1.206H6.406c-.67 0-1.21-.549-1.21-1.206c0-.661.54-1.205 1.21-1.205m-1.21 8.418c0-.66.54-1.2 1.21-1.2h7.127c.665 0 1.205.54 1.205 1.2c0 .652-.54 1.2-1.205 1.2H6.406a1.21 1.21 0 0 1-1.21-1.2"></path></svg>
+                </div>
+                <div class="apps-text">
+                    <span>Smashing Magazine</span>
+                    <span>smashingmagazine.com</span>
+                </div>
+            </a>
+            <a class="apps-item" style="--bg-hover: #689d6a" href="https://davidwalsh.name/tutorials/javascript">
+                <div class="apps-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="-2 -2 24 24" class="iconify icon" data-icon="jam:blogger" style="vertical-align: -0.125em; transform: rotate(360deg);"><path fill="currentColor" d="M13.593 19.96c3.48 0 6.307-2.836 6.327-6.297l.039-5.095l-.059-.278l-.167-.348l-.283-.22c-.367-.287-2.228.02-2.729-.435c-.355-.324-.41-.91-.518-1.706c-.2-1.54-.326-1.62-.568-2.142C14.76 1.585 12.382.193 10.75 0H6.325C2.845 0 0 2.839 0 6.307v7.356c0 3.461 2.845 6.296 6.325 6.296h7.268zM6.406 5.151h3.507c.67 0 1.212.544 1.212 1.205c0 .657-.542 1.206-1.212 1.206H6.406c-.67 0-1.21-.549-1.21-1.206c0-.661.54-1.205 1.21-1.205m-1.21 8.418c0-.66.54-1.2 1.21-1.2h7.127c.665 0 1.205.54 1.205 1.2c0 .652-.54 1.2-1.205 1.2H6.406a1.21 1.21 0 0 1-1.21-1.2"></path></svg>
+                </div>
+                <div class="apps-text">
+                    <span>David Walsh</span>
+                    <span>davidwalsh.com</span>
+                </div>
+            </a>
+        </div>
+
     </section>
     <section id="apps">
-      <h3 class="heading-container" style="--bg-header: #458588;"> Fun Stuff</h3>
+      <h3 class="heading-container" style="--bg-header: #458588;">Miscellany</h3>
       <div id="apps-container">
         <a class="apps-item" style="--bg-hover: #d79921" href="https://tappedout.net/mtg-decks/10-01-15-volrath-the-risen/">
           <div class=" apps-icon">

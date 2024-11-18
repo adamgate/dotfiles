@@ -70,6 +70,10 @@ ul {
     list-style-position: inside;
 }
 
+section {
+    margin-bottom: 30px;
+}
+
 #header {
     text-align: center;
     color: var(--color-primary);

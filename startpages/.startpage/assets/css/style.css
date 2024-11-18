@@ -47,6 +47,10 @@ h2 {
     padding: 0;
 }
 
+h2 {
+    font-size: 3em;
+}
+
 h3,
 h4 {
     text-transform: uppercase;

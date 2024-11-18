@@ -110,6 +110,13 @@ section {
     text-align: center;
 }
 
+.foreground-item {
+    background-color: rgba(55, 55, 55, .6);
+    padding: 10px 20px;
+    border-radius: var(--rounded);
+    margin-bottom: 30px;
+}
+
 .text-item {
     margin: .5rem;
     padding: 13px;

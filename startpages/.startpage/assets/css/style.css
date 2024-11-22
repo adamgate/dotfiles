@@ -212,6 +212,9 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .apps-text span {

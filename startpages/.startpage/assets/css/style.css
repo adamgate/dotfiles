@@ -183,6 +183,9 @@ a {
     background: var(--bg-secondary);
     border-radius: var(--rounded);
     transition: background-color .5s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .apps-item:hover {

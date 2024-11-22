@@ -16,10 +16,10 @@ function startTime() {
     checkTime(currentDate.getMinutes());
 
   const dateOptions = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
     weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
   };
 
   document.getElementById("header-date").innerHTML =
@@ -29,9 +29,8 @@ function startTime() {
 }
 
 function checkTime(time) {
-  if (time < 10) {
-    time = "0" + time;
-  }
+  if (time < 10) time = "0" + time;
+
   return time;
 }
 document

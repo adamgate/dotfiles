@@ -212,18 +212,12 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .apps-text span {
     font-size: 1em;
     font-weight: 500;
     text-decoration: none !important;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .apps-text span:nth-child(2n) {

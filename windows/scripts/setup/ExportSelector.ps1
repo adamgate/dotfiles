@@ -7,7 +7,7 @@ $exports = @{
     WindowsTerminal = './exports/export-windows-terminal.ps1';
 }
 
-Write-Host "Config files available to export are: All, Discord, FancyWM (fwm) Git, Oh My Posh (omp), Powershell, Spotify, Vim, Vscode, & Windows Terminal."
+Write-Host "Config files available to export are: All, Git, Oh My Posh (omp), Powershell, Vim, VScode, & Windows Terminal."
 $selection = Read-Host "Which files would you like to export? "
 
 if ($selection.toLower() -eq 'all') {

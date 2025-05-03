@@ -16,7 +16,6 @@ if ($selection.toLower() -eq 'all') {
         Invoke-Expression $exports[$key]  | Out-Null
     }
 }
-}
 if ($selection.toLower() -eq 'git') {
     Write-Host "Exporting Git configuration files..." -ForegroundColor Yellow
     Invoke-Expression $exports.Git | Out-Null
